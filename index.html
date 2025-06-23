@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MyJobsCorner – Find Jobs Near You</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J5S8JDJGY0'); // Replace with your GA4 Measurement ID
+  </script>
+
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -118,19 +130,19 @@
     <div class="urgency">🔥 New openings updated daily — apply now!</div>
 
     <div class="job-links">
-      <a href="https://getrewarrds.com/aff_c?offer_id=1363&aff_id=12687" class="job-card" target="_blank">
+      <a id="tesla-btn" href="https://getrewarrds.com/aff_c?offer_id=1363&aff_id=12687" class="job-card" target="_blank">
         <h3>Tesla Jobs</h3>
         <span>Manufacturing, logistics, tech roles & more</span>
       </a>
-      <a href="https://getrewarrds.com/aff_c?offer_id=973&aff_id=12687" class="job-card" target="_blank">
+      <a id="netflix-btn" href="https://getrewarrds.com/aff_c?offer_id=973&aff_id=12687" class="job-card" target="_blank">
         <h3>Netflix Jobs</h3>
         <span>Streaming support, creative, remote roles</span>
       </a>
-      <a href="https://getrewarrds.com/aff_c?offer_id=1373&aff_id=12687" class="job-card" target="_blank">
+      <a id="google-btn" href="https://getrewarrds.com/aff_c?offer_id=1373&aff_id=12687" class="job-card" target="_blank">
         <h3>Google Jobs</h3>
         <span>Engineering, data, admin & internships</span>
       </a>
-      <a href="https://getrewarrds.com/aff_c?offer_id=1375&aff_id=12687" class="job-card" target="_blank">
+      <a id="fedex-btn" href="https://getrewarrds.com/aff_c?offer_id=1375&aff_id=12687" class="job-card" target="_blank">
         <h3>Fedex Jobs</h3>
         <span>Warehouse, delivery, customer service</span>
       </a>
@@ -155,5 +167,36 @@
       &copy; 2025 MyJobsCorner. Not affiliated with Tesla, Netflix, Google, or Amazon.
     </footer>
   </div>
+
+  <!-- Event Tracking for Each Offer Button -->
+  <script>
+    document.getElementById('tesla-btn').addEventListener('click', function () {
+      gtag('event', 'click_tesla_offer', {
+        event_category: 'Job Button Clicks',
+        event_label: 'Tesla'
+      });
+    });
+
+    document.getElementById('netflix-btn').addEventListener('click', function () {
+      gtag('event', 'click_netflix_offer', {
+        event_category: 'Job Button Clicks',
+        event_label: 'Netflix'
+      });
+    });
+
+    document.getElementById('google-btn').addEventListener('click', function () {
+      gtag('event', 'click_google_offer', {
+        event_category: 'Job Button Clicks',
+        event_label: 'Google'
+      });
+    });
+
+    document.getElementById('fedex-btn').addEventListener('click', function () {
+      gtag('event', 'click_fedex_offer', {
+        event_category: 'Job Button Clicks',
+        event_label: 'Fedex'
+      });
+    });
+  </script>
 </body>
 </html>
